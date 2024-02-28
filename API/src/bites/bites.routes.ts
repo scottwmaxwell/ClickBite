@@ -6,7 +6,7 @@ router
     .route('/bites')
     .get(BitesController.getBites);
 router
-    .route('/bite')
+    .route('/createBite')
     .post(BitesController.createBite);
 
 export default router;
