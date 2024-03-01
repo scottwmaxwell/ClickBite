@@ -1,12 +1,27 @@
 import executeMongoDBOperation from '../services/mongodb.conntector';
 import { Request, RequestHandler, Response} from 'express';
+const {ObjectId } = require('mongodb');
 
 export const getBites: RequestHandler = async(req: Request, res: Response)=>{
 
     try{
         let bites;
+        let biteId = req.query.id;
 
-        bites = await executeMongoDBOperation('bites', 'find',{});
+        if(biteId){
+            try{
+                bites = await executeMongoDBOperation('bites', 'find',{ _id: new ObjectId(biteId) })
+            }catch(e){
+                console.log(e)
+                res.status(200).json(
+                    ["Invalid Id"]
+                )
+            }
+            ;
+        }else{
+            bites = await executeMongoDBOperation('bites', 'find',{});
+        }
+       
         res.status(200).json(
             bites
         );
@@ -16,12 +31,12 @@ export const getBites: RequestHandler = async(req: Request, res: Response)=>{
     }   
 }
 
-export const getBitesById: RequestHandler = async(req: Request, res: Response)=>{
+export const getBitesByUsername: RequestHandler = async(req: Request, res: Response)=>{
 
     try{
         let bites;
-
-        bites = await executeMongoDBOperation('bites', 'find',{});
+        let username = req.params.username;
+        bites = await executeMongoDBOperation('bites', 'find', {username: username});
         res.status(200).json(
             bites
         );
@@ -44,4 +59,14 @@ export const createBite: RequestHandler = async(req: Request, res: Response)=>{
     }   
 }
 
-// Insert
+export const deleteBite: RequestHandler = async(req: Request, res: Response)=>{
+
+    try{
+        let biteId = req.params.id
+        let result = await executeMongoDBOperation('bites', 'delete', { _id: new ObjectId(biteId) });
+        console.log(result)
+
+    }catch(e){
+        console.log(e)
+    }   
+}

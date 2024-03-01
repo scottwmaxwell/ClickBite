@@ -27,7 +27,11 @@ const executeMongoDBOperation = async (collectionName:string, operation:string, 
               await collection.insertOne(data);
               return 'Insert successful';
             // Add more cases for other operations as needed
+            case 'delete':
+              await collection.deleteOne(data);
+              return 'Delete successful'
             default:
+              console.log(operation)
               throw new Error('Invalid operation specified');
           }
     }finally{
