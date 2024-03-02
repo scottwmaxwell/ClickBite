@@ -4,6 +4,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 
 import bitesRouter from './bites/bites.routes';
+import reviewsRouter from './reviews/reviews.routes';
+import usersRouter from './users/users.routes';
 
 dotenv.config();
 
@@ -24,7 +26,7 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 // Routers
-app.use('/', [bitesRouter]);
+app.use('/', [bitesRouter, reviewsRouter, usersRouter]);
 
 app.get('/', (req: Request, res: Response)=>{
     res.render('index');
