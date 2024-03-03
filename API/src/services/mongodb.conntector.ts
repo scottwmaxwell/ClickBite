@@ -3,9 +3,14 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const uri = "mongodb+srv://clickbiteadmin:"+ process.env.PASS +"@cluster0.byarc1e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+if(process.env.ENV == 'production'){
+  const uri = "mongodb+srv://clickbiteadmin:"+ process.env.PASS +"@cluster0.byarc1e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+}else{
+  const uri = process.env.LOCALDB
+}
 
-const client = new MongoClient(uri, {
+
+const client = new MongoClient('mongodb://localhost:27017', {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
