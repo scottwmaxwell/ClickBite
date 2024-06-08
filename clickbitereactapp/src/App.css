@@ -1,0 +1,19 @@
+body{
+    margin-top:100px !important;
+    margin-bottom:50px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #171a21 !important;
+        color:rgb(191, 178, 178) !important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body{
+        background-color: #ebedf2 !important;
+        color:rgb(0, 0, 0) !important;
+    }
+}

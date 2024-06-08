@@ -1,0 +1,115 @@
+@media (prefers-color-scheme: dark) {
+    .btn{
+        background-color:rgb(105, 83, 83);
+        color:rgb(191, 178, 178);
+    }
+    
+    input{
+        background-color: #323844 !important;
+        color: rgb(191, 178, 178) !important;
+        box-shadow: none !important;
+    }
+    
+    input:focus {
+        outline: none !important;
+        border-color: initial !important;
+        box-shadow: none !important;
+        background-color: #323844 !important;
+        color: rgb(191, 178, 178) !important;
+    }
+    
+    input::placeholder {
+        color: rgb(135, 124, 124) !important;
+    }
+    
+    textarea::placeholder {
+        color: rgb(135, 124, 124) !important;
+    }
+    
+    textarea{
+        background-color: #323844 !important;
+        border:none;
+        color: rgb(191, 178, 178) !important;
+        max-height:100px !important;
+    }
+    
+    textarea:focus {
+        background-color: #323844 !important;
+        color: rgb(191, 178, 178) !important;
+    }
+}
+
+
+
+#submit{
+    display:block !important;
+    margin-left: auto !important;
+    margin-top:20px !important;
+    border-radius:30px !important;
+}
+
+.addItem{
+    border-radius:30px !important;
+    /* height:30px;
+    width:30px; */
+}
+
+.removeItem{
+    margin-left:6px;
+    background:none;
+    border:none;
+    outline:none !important;
+    outline:none !important;
+    text-decoration: none !important;
+}
+
+.removeItem:hover{
+    cursor:pointer;
+}
+
+.fa-trash{
+    color:#505662;
+}
+
+input{
+    border-radius:30px !important;
+    border:none !important;
+    box-shadow: none !important;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: initial !important;
+    box-shadow: none !important;
+}
+
+.ingredientInput{
+    margin-bottom:10px !important;
+}
+
+.stepInput{
+    margin-bottom:10px !important;
+}
+
+textarea{
+    border-radius:30px !important;
+    border:none;
+    max-height:100px !important;
+    border:0 !important;
+}
+
+textarea:focus {
+    outline: none !important;
+    border-color: initial !important; 
+    box-shadow: none !important;
+}
+
+ul{
+    margin-top:2px !important;
+    list-style-type: none;
+    padding: 0 !important;
+}
+
+label{
+    margin-top:20px;
+}

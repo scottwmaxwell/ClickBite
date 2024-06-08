@@ -12,6 +12,9 @@ router
     .route('/createBite')
     .post(BitesController.createBite);
 router
+    .route('/editBite')
+    .post(BitesController.updateBite);
+router
     .route('/deleteBite/:id')
     .delete(BitesController.deleteBite);
 

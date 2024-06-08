@@ -51,7 +51,19 @@ export const createBite: RequestHandler = async(req: Request, res: Response)=>{
     try{
         let bites;
         
-        let result = await executeMongoDBOperation('bites', 'insert', req.body);
+        let result = await executeMongoDBOperation('bites', 'insert', req.body, null);
+        console.log(result)
+
+    }catch(e){
+        console.log(e)
+    }   
+}
+
+export const updateBite: RequestHandler = async(req: Request, res: Response)=>{
+
+    try{
+        let biteId = req.params.id
+        let result = await executeMongoDBOperation('bites', 'update', req.body, { _id: new ObjectId(biteId) }, );
         console.log(result)
 
     }catch(e){

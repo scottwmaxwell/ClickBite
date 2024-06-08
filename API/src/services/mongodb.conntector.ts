@@ -18,7 +18,7 @@ const client = new MongoClient('mongodb://localhost:27017', {
   }
 });
 
-const executeMongoDBOperation = async (collectionName:string, operation:string, data:any) =>{
+const executeMongoDBOperation = async (collectionName:string, operation:string, data:any, id?:any) =>{
 
     await client.connect();
     const database = client.db('ClickBite');
@@ -31,7 +31,9 @@ const executeMongoDBOperation = async (collectionName:string, operation:string, 
             case 'insert':
               await collection.insertOne(data);
               return 'Insert successful';
-            // Add more cases for other operations as needed
+            case 'update':
+              await collection.updateOne(data, data);
+              return 'Update successful';
             case 'delete':
               await collection.deleteOne(data);
               return 'Delete successful'

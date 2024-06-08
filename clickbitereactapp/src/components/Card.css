@@ -1,0 +1,39 @@
+@media (prefers-color-scheme: light) {
+    .card{
+        background-color:rgb(238, 238, 238) !important;
+        color:rgb(142, 135, 135) !important;
+    }
+
+    .btn{
+        background-color: #616875 !important;
+        color:rgb(255, 255, 255) !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .card{
+        background-color:#1f232b !important;
+        color:rgb(142, 135, 135) !important;
+    }
+
+    .btn{
+        background-color:rgba(96, 129, 99, 0.851) !important;
+        color:white !important;
+    }
+}
+
+.card{
+    margin-bottom:15px;
+}
+
+
+#rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linkToBite{
+    text-decoration: none !important;
+    color: inherit !important;
+}
