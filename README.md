@@ -17,6 +17,10 @@ Bites contain:
 - Steps (Instructions)
 - An Image URL
 - Nutritional Information
+
+# Preview
+
+<img src='assets/images/HomePage.png' width=300>
     
 ## Resources:
 
