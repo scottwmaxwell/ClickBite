@@ -20,7 +20,7 @@ Bites contain:
 
 # Preview
 
-<img src='assets/images/HomePage.png' width=300>
+<img src='assets/images/HomePage.png' width=700>
     
 ## Resources:
 
