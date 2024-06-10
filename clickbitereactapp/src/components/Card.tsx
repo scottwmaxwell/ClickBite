@@ -7,7 +7,7 @@ import './Card.css'
 function Card(props: any){
 
     let cardImage = defaultImage
-    let linkToBite = '/bite/' + props.bite.id
+    let linkToBite = '/bite/' + props.bite._id
 
     if(props.bite.image != ""){
         cardImage = props.bite.image

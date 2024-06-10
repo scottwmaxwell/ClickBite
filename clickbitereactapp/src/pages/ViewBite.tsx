@@ -10,6 +10,7 @@ const ViewBite = () =>{
     const navigate = useNavigate()
 
     const { id } = useParams()
+    console.log(id);
 
     let biteData = {
         id: "",
@@ -58,10 +59,21 @@ const ViewBite = () =>{
         let deleteConfirm = window.confirm("Are you sure you would like to delete this bite?")
 
         if(deleteConfirm){
-            dataSource.delete('/bites/delete/' + id)
+            dataSource.delete('/deleteBite' + id)
             navigate('/')
         }
 
+    }
+
+    const renderSteps = (steps: any) => {
+        if(steps){
+            return steps.map((index:number) => {
+                return (
+                    <li key={index}>{index}</li>
+                    
+                );
+              });
+        }
     }
     
 
@@ -88,7 +100,7 @@ const ViewBite = () =>{
                             <div id='steps'>
                                 <p><b>Steps</b></p>
                                 <ol>
-                                    {steps}
+                                    {renderSteps(bite.steps)}
                                 </ol>
                             </div>
 
@@ -99,7 +111,7 @@ const ViewBite = () =>{
                 <div className="col-md-3">
                     <b>Ingredients</b>
                     <ul>
-                        {ingredients}
+                        {renderSteps(bite.ingredients)}
                     </ul>
                 </div>
 

@@ -81,7 +81,7 @@ const Edit = () =>{
         return ingredients.map((ingredient:any, index:number) => {
           return (
             <li key={index} id={index.toString()}>
-                <input placeholder='Enter an ingredient' value={ingredient.ingredient} className='ingredientInput' onChange={updateIngredients}></input> 
+                <input placeholder='Enter an ingredient' value={ingredient} className='ingredientInput' onChange={updateIngredients}></input> 
                     <a className='removeItem' onClick={()=>{removeIngredientInput(index) }}>
                         <i className="fa-solid fa-trash"></i>
                     </a>
@@ -92,11 +92,13 @@ const Edit = () =>{
 
     const renderedStepsList = () => {
         return steps.map((step:any, index:number) => {
+
+            console.log(steps[index])
           return (
             <li key={index} id={index.toString()}>
               <input
                 placeholder='Enter a step'
-                value={step.step}
+                value={step}
                 className='stepInput'
                 onChange={updateSteps}
               />
@@ -126,9 +128,8 @@ const Edit = () =>{
         let response
         if(editMode){
             response = await dataSource.get('/bites?biteId=' + id)
-            console.log("response.data[0].id: " + response.data[0].id)
-            bite.id = response.data[0].id
-            console.log(bite.id)
+            console.log("response.data[0]._id: " + response.data[0]._id)
+            bite.id = response.data[0]._id
             bite.title = response.data[0].title
             bite.description = response.data[0].description
             bite.image = response.data[0].image
